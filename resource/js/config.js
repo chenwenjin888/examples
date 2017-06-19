@@ -108,5 +108,5 @@ var GConfig = [
     {
         imgSrc: imgPath+'01.png',
         title: '瀑布流布局展示'
-    },
+    }
 ]
