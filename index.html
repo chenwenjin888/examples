@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案列展示</title>
+    <link rel="stylesheet" href="resource/css/index.css">
+    <script src="resource/js/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <div class="container clearfix">
+        <div class="logo"><img src="resource/images/logo.jpg"></div>
+        <div class="title">案列展示</div>
+    </div>
+</div>
+
+<div class="container padding-top-60" id="container">
+    <!--<div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/2/2017-06-12/b8ee2990cd718077e672d5b0e657a42b_thumb.jpg">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>
+    <div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/766493/2017-06-10/bf48177122dcf920ab24c68d806da99b_thumb.PNG">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>
+    <div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/2/2017-06-12/b8ee2990cd718077e672d5b0e657a42b_thumb.jpg">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>
+    <div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/766493/2017-06-10/bf48177122dcf920ab24c68d806da99b_thumb.PNG">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>
+    <div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/766493/2017-06-10/bf48177122dcf920ab24c68d806da99b_thumb.PNG">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>
+    <div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/2/2017-06-12/b8ee2990cd718077e672d5b0e657a42b_thumb.jpg">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>
+    <div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/766493/2017-06-10/bf48177122dcf920ab24c68d806da99b_thumb.PNG">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>
+    <div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/2/2017-06-12/b8ee2990cd718077e672d5b0e657a42b_thumb.jpg">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>
+    <div class="pin">
+        <a href="#" class="pic-box">
+            <img class="pic-img" src="resource/images/lazypic.jpg"
+                 data-url="http://image.17sucai.com/upload/766493/2017-06-10/bf48177122dcf920ab24c68d806da99b_thumb.PNG">
+            <div class="pic-title">瀑布流布局展示</div>
+        </a>
+    </div>-->
+</div>
+
+
+<script src="resource/js/common.js"></script>
+<script src="resource/js/config.js"></script>
+<script>
+    $(function () {
+        var $container = $('#container');
+
+        function getItems(data) {
+            return `<div class="pin">
+                    <a href="#" class="pic-box">
+                        <img class="pic-img" src="resource/images/lazypic.jpg"
+                             data-url="` + data.imgSrc + `">
+                        <div class="pic-title">` + data.title + `</div>
+                    </a>
+                </div>`;
+        }
+
+        var itemsHtml = '';
+        for (var i = 0; i < GConfig.length; i++) {
+            itemsHtml += getItems(GConfig[i]);
+        }
+        $container.html(itemsHtml);
+
+        $container.imagesLoaded(function () {
+            $container.masonry({
+                itemSelector: ".pin",
+                columnWidth: 7,
+            });
+        });
+        $(".pic-img").scrollLoading();
+        $container.addClass('animated bounceInUp');
+        // 特殊处理
+        setTimeout(function () {
+            $(".pic-img").scrollLoading({
+                callback: function () {
+                    $container.imagesLoaded(function () {
+                        $container.masonry('reload');
+                    });
+                }
+            });
+        }, 700);
+    });
+
+</script>
+
+</body>
+</html>
