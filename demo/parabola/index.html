@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parabola 抛物线与购物车效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 377px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .shop-cart-num {
+            color: #fff;
+            padding: 0 5px;
+            background-color: red;
+            z-index: 1;
+            position: absolute;
+            top: 416px;
+            right: 20px;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        .add-shop-cart {
+            position: absolute;
+            left: 0;
+            bottom: 25px;
+            width: 187.5px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .img-element {
+            border: 2px solid #B30000;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            position: absolute;
+            left: 70px;
+            bottom: 25px;
+            visibility: hidden;
+            opacity: .5;
+            filter: alpha(opacity=50);
+        }
+
+        .shop-cart {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 10px;
+            bottom: 225px;
+        }
+    </style>
+    <script src="../../resource/js/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <img src="dist/01.png">
+    <center>点击加入购物车查看效果</center>
+
+    <!--动画图片-->
+    <div class="img-element" id="imgElement">
+        <img src="dist/02.jpg" width="50" height="50">
+    </div>
+    <!--购物车-->
+    <div class="shop-cart" id="shopCart"></div>
+
+    <span class="shop-cart-num">0</span>
+    <div class="add-shop-cart"><!--加入购物车--></div>
+</div>
+
+<script src="dist/parabola.js"></script>
+<script>
+    var imgElement = document.querySelector('#imgElement'), shopCartElement = document.querySelector('#shopCart'), proNum = 0;
+
+    // 初始化抛物线动画
+    var myParabola = funParabola(imgElement, shopCartElement, {
+        speed: 100,// 每帧移动的像素大小
+        curvature: 0.005,// 实际指焦点到准线的距离
+        complete: function () {
+            imgElement.style.visibility = "hidden";
+            $('.shop-cart-num').text(++proNum);
+        }
+    });
+    // 绑定加入购物车事件
+    $('.add-shop-cart').click(function () {
+        // 重置位置
+        $('#imgElement').css({ left: '70px', bottom: '25px', visibility: 'visible' });
+
+        myParabola.position().move();
+    });
+</script>
+
+</body>
+</html>
