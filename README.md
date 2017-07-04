@@ -3,3 +3,4 @@
 
 ## demo
 * [parabola 抛物线与购物车效果](https://chenwenjin888.github.io/examples/demo/parabola/index.html)
+* [网站首页效果1 background-attachment: fixed布局](https://chenwenjin888.github.io/examples/demo/home-pages/home1/index.html)

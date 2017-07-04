@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>案列展示</title>
+    <link rel="stylesheet" href="resource/css/common.css">
     <link rel="stylesheet" href="resource/css/index.css">
     <script src="resource/js/jquery.min.js"></script>
 </head>
@@ -10,8 +11,12 @@
 
 <div class="header">
     <div class="container clearfix">
-        <div class="logo"><img src="resource/images/logo.jpg"></div>
-        <div class="title">案列展示</div>
+        <div class="logo">
+            <a href="https://github.com/chenwenjin888"><img src="resource/images/logo.jpg"></a>
+        </div>
+        <div class="title">
+            <a href="https://github.com/chenwenjin888">案列展示</a>
+        </div>
     </div>
 </div>
 
@@ -89,7 +94,7 @@
 
         function getItems(data) {
             return `<div class="pin">
-                    <a href="` + data.href + `" class="pic-box">
+                    <a href="` + data.href + `" class="pic-box" target="_blank">
                         <img class="pic-img" src="resource/images/lazypic.jpg"
                              data-url="` + data.imgSrc + `">
                         <div class="pic-title">` + data.title + `</div>

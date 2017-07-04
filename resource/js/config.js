@@ -9,5 +9,10 @@ var GConfig = [
         imgSrc: imgPath + '01.png',
         href: 'demo/parabola/index.html',
         title: 'parabola 抛物线与购物车效果'
-    }
+    },
+    {
+        imgSrc: imgPath + '02.png',
+        href: 'demo/home-pages/home1/index.html',
+        title: '网站首页效果1 background-attachment: fixed布局'
+    },
 ]
