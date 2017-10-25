@@ -81,7 +81,12 @@
 
 <script src="dist/parabola.js"></script>
 <script>
-    var imgElement = document.querySelector('#imgElement'), shopCartElement = document.querySelector('#shopCart'), proNum = 0;
+    // 起始位置元素
+    var imgElement = document.querySelector('#imgElement'),
+        // 终点位置元素
+        shopCartElement = document.querySelector('#shopCart'),
+        // 购物车数量
+        proNum = 0;
 
     // 初始化抛物线动画
     var myParabola = funParabola(imgElement, shopCartElement, {
