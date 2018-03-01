@@ -13,6 +13,6 @@ var GConfig = [
     {
         imgSrc: imgPath + '02.png',
         href: 'demo/home-pages/home1/index.html',
-        title: '网站首页效果1 background-attachment: fixed布局'
+        title: '网站首页-背景固定效果 background-attachment: fixed布局'
     },
 ]
