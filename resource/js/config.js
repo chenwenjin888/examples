@@ -15,4 +15,9 @@ var GConfig = [
         href: 'demo/home-pages/home1/index.html',
         title: '网站首页-背景固定效果 background-attachment: fixed布局'
     },
+    {
+        imgSrc: imgPath + 'skeleton-screen.png',
+        href: 'demo/skeleton-screen/index.html',
+        title: 'skeleton screen 加载占位图'
+    },
 ]

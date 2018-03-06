@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>加载占位图</title>
+    <style>
+        /*src/styles/app.css*/
+        .container{
+            border: 1px solid #ddd;
+            width: 375px;
+            margin: 0 auto;
+            background-color: #f3f3f3;
+        }
+        .title{
+            color: #fff;
+            background-color: #18c37d;
+            padding-top: 20px;
+        }
+        .bg-color-fff{
+            background-color: #fff;
+            padding: 10px
+        }
+    </style>
+    <style>
+        /* 加载占位图skeleton screen   开始*/
+        .ss-header{
+            width: 100%;
+            height: 100%;
+            background-color: #f2f2f2;
+        }
+        .ss-title, .ss-text{
+            width: 100%;
+            height: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 5px;
+
+        }
+        .animation-rl{
+            animation: loading 1.5s ease-in-out infinite;
+            -webkit-animation: loading 1.5s ease-in-out infinite;
+        }
+        .animation-lr {
+            animation: loading 1.5s ease-in-out -.5s infinite;
+            -webkit-animation: loading 1.5s ease-in-out -.5s infinite;
+        }
+        @keyframes loading {
+            0% {
+                width: 100%;
+            }
+
+            50% {
+                width: 60%;
+            }
+
+            100% {
+                width: 100%;
+            }
+
+        }
+        @-webkit-keyframes loading {
+            0% {
+                width: 100%;
+            }
+
+            50% {
+                width: 60%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .ss-text{
+            height: 14px;
+        }
+        .ss-small{
+            display: inline-block;
+            vertical-align: middle;
+            background-color: #f2f2f2;
+            width: 40px;
+            height: 14px;
+        }
+        .ss-tag{
+            display: inline-block;
+            width: 48px;
+            height: 22px;
+            vertical-align: middle;
+            background-color: #f2f2f2;
+            border-radius: 3px;
+            float: right;
+        }
+        .ss-square{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #f2f2f2;
+            border-radius: 3px;
+        }
+        /*媒体列表*/
+        .ss-media-list{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            height: 100px;
+            background-color: #fff;
+            padding:10px;
+        }
+        .ss-media-list .ss-media{
+            width: 100px;
+        }
+        .ss-media-list .ss-inner{
+            padding-left: 10px;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+        /* 加载占位图skeleton screen   结束*/
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title">通用格式</div>
+    <div class="bg-color-fff">
+        <div class="ss-title"></div>
+        <div class="ss-text animation-rl"></div>
+        <div class="ss-text animation-lr"></div>
+        <div class="ss-text" style="width: 60%"></div>
+        <div class="ss-text" style="width: 90%"></div>
+        <div class="ss-small"></div>
+        <div class="ss-tag"></div>
+        <div>
+            <span class="ss-square"></span> <span class="ss-square"></span>
+            <span class="ss-square"></span> <span class="ss-square"></span>
+        </div>
+    </div>
+
+    <div class="title">多媒体列表</div>
+    <div class="ss-media-list">
+        <div class="ss-media ss-header">
+        </div>
+        <div class="ss-inner">
+            <div class="ss-title"></div>
+            <div class="ss-text" style="width: 60%"></div>
+            <div class="ss-small margin-top-20"  ></div>
+            <div class="margin-top-5">
+                <div class="ss-small"></div>
+                <div class="ss-small"></div>
+                <div class="ss-tag"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
